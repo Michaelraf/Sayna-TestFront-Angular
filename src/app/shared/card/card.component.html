@@ -1,0 +1,7 @@
+<div class="card-container">
+    <div *ngFor = "let card of cards" class="card-layout">
+        <p class="sum"><span>{{card.sum}}</span><span class="cardCurrency"> {{card.currency}}</span></p>
+        <p class="num">{{card.num}}</p>
+        <p class="use">{{card.used}} / {{card.total}}</p>
+    </div>
+</div>
