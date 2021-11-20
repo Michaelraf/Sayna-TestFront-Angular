@@ -1,1 +1,36 @@
+@import 'themes';
+
+@import '~@nebular/theme/styles/globals';
+
+
+@include nb-install() {
+  @include nb-theme-global();
+};
 /* You can add global styles to this file, and also import other style files */
+.nb-theme-default nb-menu .menu-item{
+  border: none;
+  margin: 5px 15px;
+  border-radius: 5px;
+}
+.menu-item:hover{
+  background-color: #f5f8fe;
+  .menu-title{
+    color:#303778;
+  }
+}
+.nb-theme-default nb-menu .menu-item a:hover .menu-icon{
+  color: #303778;
+}
+.nb-theme-default nb-sidebar nb-sidebar-header{
+  color: #303778;
+  font-size: 2rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  position: absolute;
+  top: -50px;
+}
+.sidebarFooter{
+  position: absolute;
+  width: 100%;
+  bottom: 7em;
+}
