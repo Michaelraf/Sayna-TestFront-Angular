@@ -6,5 +6,10 @@
             <nb-menu [items]="items"></nb-menu>
             <nb-menu [items]="itemsFooter" [ngClass]="'sidebarFooter'"></nb-menu>
     </nb-sidebar>
-    <nb-layout-column class="colored-column-success"></nb-layout-column>
+    <nb-layout-column class="colored-column-success">
+        <div [ngClass]="'addCardContainer'">
+            <p [ngClass]="'componentName'">Your Cards<p>
+            <button [ngClass]="'addCard'">New Cards +</button>       
+        </div>
+    </nb-layout-column>
 </nb-layout>

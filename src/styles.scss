@@ -7,6 +7,12 @@
   @include nb-theme-global();
 };
 /* You can add global styles to this file, and also import other style files */
+nb-layout-column.colored-column-success{
+  background: linear-gradient(90deg, rgba(249,250,253,1) 0%, rgba(252,253,255,1) 100%);
+}
+nb-sidebar.left{
+  box-shadow: 10px 5px 5px red;
+}
 .nb-theme-default nb-menu .menu-item{
   border: none;
   margin: 5px 15px;
@@ -33,4 +39,27 @@
   position: absolute;
   width: 100%;
   bottom: 7em;
+}
+.addCardContainer{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.nb-theme-default .componentName{
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  font-size: 2.3em;
+  color: #000;
+  display: inline;
+}
+button.addCard{
+  color: rgb(117, 126, 147);
+  background-color: #f1f3fa;
+  border: none;
+  padding: 10px;
+  display: inline;
+  margin-left: 20px;
+}
+button.addCard:hover{
+  background-color: #f4f6fa;
 }
