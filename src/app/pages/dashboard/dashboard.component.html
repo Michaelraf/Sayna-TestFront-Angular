@@ -3,15 +3,331 @@
         <nb-sidebar-header>
             <span>Klamma</span>
         </nb-sidebar-header>
-            <nb-menu [items]="items"></nb-menu>
-            <nb-menu [items]="itemsFooter" [ngClass]="'sidebarFooter'"></nb-menu>
+        <nb-menu [items]="items"></nb-menu>
+        <nb-menu [items]="itemsFooter" [ngClass]="'sidebarFooter'"></nb-menu>
     </nb-sidebar>
     <nb-layout-column class="colored-column-success">
         <div [ngClass]="'addCardContainer'">
-            <p [ngClass]="'componentName'">Your Cards<p>
-            <button [ngClass]="'addCard'">New Cards +</button>       
+            <p [ngClass]="'componentName'">Your Cards
+            <p>
+                <button [ngClass]="'primary'">New Cards +</button>
         </div>
         <app-card></app-card>
+        <div class='containers-wrapper'>
+            <nb-card [ngClass]="'infos-container'">
+                <nb-card-header>
+                    <div class="chartContainer">
+                        <app-doughnut-chart [ngClass]="'chart1'" [filled]="filled1" [empty]="empty1">
+                        </app-doughnut-chart>
+                        <div class="chartLegend">
+                            <p class="title">Credit limit</p>
+                            <p><span class="value">{{filled1}}</span> / {{total1}} USD</p>
+                        </div>
+                    </div>
+                    <div class="chartContainer">
+                        <app-doughnut-chart1 [ngClass]="'chart1'" [filled]="filled2" [empty]="empty2">
+                        </app-doughnut-chart1>
+                        <div class="chartLegend">
+                            <p class="title">Credit limit</p>
+                            <p><span class="value">{{filled2}}</span> / {{total2}} USD</p>
+                        </div>
+                    </div>
+
+                </nb-card-header>
+                <nb-card-body>
+                    <p class="card-body-title">Int. Payments </p>
+                    <p class="card-body-notice">the last 30 days</p>
+                    <nb-card>
+                        <nb-card-body>
+                            <nb-actions size="large">
+                                <nb-action>
+                                    <div>
+                                        <p class="number">8</p>
+                                        <p class="note">Awaiting</p>
+                                    </div>
+                                </nb-action>
+                                <nb-action badgeText="!" badgePosition="top right" badgeStatus="danger">
+                                    <div>
+                                        <p class="number">5</p>
+                                        <p class="note">In progress</p>
+                                    </div>
+                                </nb-action>
+                                <nb-action>
+                                    <div>
+                                        <p class="number">12</p>
+                                        <p class="note">completed</p>
+                                    </div>
+                                </nb-action>
+                                <nb-action>
+                                    <div>
+                                        <p class="number">4</p>
+                                        <p class="note">Canceled</p>
+                                    </div>
+                                </nb-action>
+                            </nb-actions>
+                        </nb-card-body>
+                    </nb-card>
+                </nb-card-body>
+                <nb-card-footer [ngClass]="'card-row'">
+                    <nb-card>
+                        <nb-card-header [ngStyle]="{'padding-top':0, 'padding-bottom':0}">
+                            <nb-icon icon="diagonal-arrow-left-down-outline" [ngStyle]="{'color': 'green'}"></nb-icon>
+                            <p [ngStyle]="{'color': 'green', 'font-size':'O.7em', 'padding':'5px'}">Money in</p>
+                        </nb-card-header>
+                        <nb-card-body [ngClass]="'card-col'">
+                            <p class="sum">10425</p><span class="currency">USD</span>
+                        </nb-card-body>
+                    </nb-card>
+                    <nb-card>
+                        <nb-card-header [ngStyle]="{'padding-top':0, 'padding-bottom':0}">
+                            <nb-icon icon="diagonal-arrow-right-up-outline" [ngStyle]="{'color': 'red'}"></nb-icon>
+                            <p [ngStyle]="{'color': 'red', 'font-size':'O.7em', 'padding':'5px'}">Money Out</p>
+                        </nb-card-header>
+                        <nb-card-body [ngClass]="'card-col'">
+                            <p class="sum">4640</p><span class="currency">USD</span>
+                        </nb-card-body>
+                    </nb-card>
+                </nb-card-footer>
+            </nb-card>
+            <nb-card>
+                <nb-card-header>
+                    <p [ngStyle]="{'font-family':'Arial', 'font-weight':'bold', 'min-width':'300px'}">
+                        Recent Activities
+                    </p>
+                    <button [ngClass]="'primary'">View a report</button>
+                </nb-card-header>
+                <nb-card-body>
+                    <p [ngStyle]="{'color':'gray', 'font-size': '0.7em'}">
+                        Today
+                    </p>
+
+                    <div [ngStyle]="{
+                            'display': 'flex'
+                        }">
+                        <div [ngStyle]="{
+                            'display': 'flex',
+                            'flex-direction': 'row',
+                            'align-items': 'center'
+                        }">
+                            <div>
+                                <nb-icon icon="paper-plane-outline"></nb-icon>
+                            </div>
+                            <div [ngStyle]="{
+                                'display':'flex',
+                                'flex-direction':'column',
+                                'padding':'5px',
+                                'margin': '10px'
+                            }">
+                                <span [ngStyle]="{
+
+                                }">To Martin Michel</span>
+                                <span [ngStyle]="{
+                                    'color': 'gray',
+                                    'font-size':'0.6em'
+                                }">Sent</span>
+                            </div>
+                            <div [ngStyle]="{
+                                'font-family':'Arial',
+                                'position': 'absolute',
+                                'right': '10px'
+                            }">
+                                <span [ngStyle]="{
+                            'font-family':'Arial'
+                            }">-3,004.53</span>
+                                <span [ngStyle]="{
+                                'font-weight': 'bold',
+                                'font-family': 'Arial',
+                                'margin':' 0 5px'
+                            }">USD</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div [ngStyle]="{
+                        'display': 'flex'
+                    }">
+                        <div [ngStyle]="{
+                        'display': 'flex',
+                        'flex-direction': 'row',
+                        'align-items': 'center'
+                    }">
+                            <div>
+                                <nb-icon icon="paper-plane-outline"></nb-icon>
+                            </div>
+                            <div [ngStyle]="{
+                            'display':'flex',
+                            'flex-direction':'column',
+                            'padding':'5px',
+                            'margin': '10px'
+                        }">
+                                <span [ngStyle]="{
+
+                            }">To Jane Klamberberg</span>
+                                <span [ngStyle]="{
+                                'color': 'gray',
+                                'font-size':'0.6em'
+                            }">Sent</span>
+                            </div>
+                            <div [ngStyle]="{
+                            'font-family':'Arial',
+                            'position': 'absolute',
+                            'right': '10px'
+                        }">
+                                <span [ngStyle]="{
+                        'font-family':'Arial'
+                        }">-1,023.19</span>
+                                <span [ngStyle]="{
+                            'font-weight': 'bold',
+                            'font-family': 'Arial',
+                            'margin':' 0 5px'
+                        }">USD</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div [ngStyle]="{
+                    'display': 'flex'
+                }">
+                        <div [ngStyle]="{
+                    'display': 'flex',
+                    'flex-direction': 'row',
+                    'align-items': 'center'
+                }">
+                            <div>
+                                <nb-icon icon="flip-2-outline"></nb-icon>
+                            </div>
+                            <div [ngStyle]="{
+                        'display':'flex',
+                        'flex-direction':'column',
+                        'padding':'5px',
+                        'margin': '10px'
+                    }">
+                                <span [ngStyle]="{
+
+                        }">EUR to USD</span>
+                                <span [ngStyle]="{
+                            'color': 'gray',
+                            'font-size':'0.6em'
+                        }">Conversion</span>
+                            </div>
+                            <div [ngStyle]="{
+                        'font-family':'Arial',
+                        'position': 'absolute',
+                        'right': '10px'
+                    }">
+                                <span [ngStyle]="{
+                    'font-family':'Arial'
+                    }">-3,004.53</span>
+                                <span [ngStyle]="{
+                        'font-weight': 'bold',
+                        'font-family': 'Arial',
+                        'margin':' 0 5px'
+                    }">USD</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <p [ngStyle]="{'color':'gray', 'font-size': '0.7em'}">
+                        Yesterday
+                    </p>
+                    <div [ngStyle]="{
+                        'display': 'flex'
+                    }">
+                        <div [ngStyle]="{
+                        'display': 'flex',
+                        'flex-direction': 'row',
+                        'align-items': 'center'
+                    }">
+                            <div>
+                                <nb-icon icon="credit-card-outline"></nb-icon>
+                            </div>
+                            <div [ngStyle]="{
+                            'display':'flex',
+                            'flex-direction':'column',
+                            'padding':'5px',
+                            'margin': '10px'
+                        }">
+                                <span [ngStyle]="{
+
+                            }">Starbucks</span>
+                                <span [ngStyle]="{
+                                'color': 'gray',
+                                'font-size':'0.6em'
+                            }">Café & Restaurants</span>
+                            </div>
+                            <div [ngStyle]="{
+                            'font-family':'Arial',
+                            'position': 'absolute',
+                            'right': '10px'
+                        }">
+                                <span [ngStyle]="{
+                        'font-family':'Arial'
+                        }">-5.99</span>
+                                <span [ngStyle]="{
+                            'font-weight': 'bold',
+                            'font-family': 'Arial',
+                            'margin':' 0 5px'
+                        }">USD</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div [ngStyle]="{
+                    'display': 'flex'
+                }">
+                        <div [ngStyle]="{
+                    'display': 'flex',
+                    'flex-direction': 'row',
+                    'align-items': 'center'
+                }">
+                            <div>
+                                <nb-icon icon="plus-circle-outline"></nb-icon>
+                            </div>
+                            <div [ngStyle]="{
+                        'display':'flex',
+                        'flex-direction':'column',
+                        'padding':'5px',
+                        'margin': '10px'
+                    }">
+                                <span [ngStyle]="{
+
+                        }">Deposit to your USD balance</span>
+                                <span [ngStyle]="{
+                            'color': 'gray',
+                            'font-size':'0.6em'
+                        }">Opened</span>
+                            </div>
+                            <div [ngStyle]="{
+                        'font-family':'Arial',
+                        'position': 'absolute',
+                        'right': '10px'
+                    }">
+                                <span [ngStyle]="{
+                    'font-family':'Arial'
+                    }">-4,000.000</span>
+                                <span [ngStyle]="{
+                        'font-weight': 'bold',
+                        'font-family': 'Arial',
+                        'margin':' 0 5px'
+                    }">USD</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </nb-card-body>
+            </nb-card>
+        </div>
     </nb-layout-column>
-    
 </nb-layout>

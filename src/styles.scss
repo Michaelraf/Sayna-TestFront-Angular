@@ -35,6 +35,9 @@ nb-sidebar.left{
   position: absolute;
   top: -50px;
 }
+.cardContainer{
+
+}
 .sidebarFooter{
   position: absolute;
   width: 100%;
@@ -52,7 +55,7 @@ nb-sidebar.left{
   color: #000;
   display: inline;
 }
-button.addCard{
+button.primary{
   color: rgb(117, 126, 147);
   background-color: #f1f3fa;
   border: none;
@@ -60,6 +63,73 @@ button.addCard{
   display: inline;
   margin-left: 20px;
 }
-button.addCard:hover{
+button.primary:hover{
   background-color: #f4f6fa;
+}
+.chart1{
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+}
+.chartLegend{
+  display: inline-block;
+  margin:0 25px;
+}
+.chartLegend .title, .chartLegend.value{
+  font-weight: bold;
+}
+.chartContainer{
+  display: flex;
+  align-items: center;
+}
+.nb-theme-default nb-card{
+  background-color: #fbfdff;
+}
+nb-card-header{
+  display: flex;
+  align-items: center;
+}
+.nb-theme-default p.card-body-title{
+  font-weight: bold;
+  display: inline-block;
+}
+.nb-theme-default p.card-body-notice{
+  display: inline-block;
+  position: absolute;
+  right: 20px;
+  color: gray;
+  font-size: 0.7em;
+}
+.nb-theme-default p.number{
+  text-align: center;
+}
+.nb-theme-default p.note{
+  font-size: 0.7em;
+  column-rule: gray;
+}
+.infos-container{
+  display: flex;
+  border: none;
+  width: fit-content;
+}
+.card-row{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.card-col {
+  display: block;
+  min-width: 250px;
+  height: fit-content;
+}
+.sum{
+  font-weight: 400;
+  display: inline-block;
+  font-size: 1.2em;
+  margin-right: 5px;
+}
+
+.containers-wrapper{
+  display: flex;
 }

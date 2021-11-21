@@ -64,4 +64,12 @@ export class DashboardComponent implements OnInit {
       icon: 'person-outline'
     }
   ]
+
+  filled1: number = 1500;
+  filled2: number = 1324;
+  total1: number = 2000;
+  total2: number = 1500;
+  empty1: number = this.total1 - this.filled1;
+  empty2: number = this.total2 - this.filled2;
+
 }
